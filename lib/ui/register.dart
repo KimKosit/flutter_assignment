@@ -67,7 +67,7 @@ class RegisterState extends State<Register> {
                           'CONTINUE',
                           style: TextStyle(color: Colors.white),
                         ),
-                        color: Theme.of(context).accentColor,
+                        color: Theme.of(context).primaryColor,
                         onPressed: () {
                           formKey.currentState.save();
                           if (userName == '' ||
