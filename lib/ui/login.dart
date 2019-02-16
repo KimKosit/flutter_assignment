@@ -1,8 +1,4 @@
-import "package:flutter/material.dart";
-
-class InputForm {
-  String user, password;
-}
+import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -16,8 +12,7 @@ class LoginState extends State<Login> {
   final formKey = new GlobalKey<FormState>();
   final scaffoldKey = new GlobalKey<ScaffoldState>();
 
-  String username;
-  String passWord;
+  String userName, passWord;
 
   @override
   Widget build(BuildContext context) {
@@ -29,53 +24,52 @@ class LoginState extends State<Login> {
             key: formKey,
             child: ListView(children: <Widget>[
               Image.asset(
-                "resources/logo.jpg",
+                'resources/logo.jpg',
               ),
               Container(
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.person), hintText: "User Id"),
-                  onSaved: (value) {
-                    username = value;
-                  },
-                ),
-              ),
+                  child: TextFormField(
+                decoration: InputDecoration(
+                    icon: Icon(Icons.person), hintText: 'User Id'),
+                onSaved: (value) {
+                  userName = value;
+                },
+              )),
               Container(
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.lock), hintText: "Password"),
-                  obscureText: true,
-                  onSaved: (value) {
-                    passWord = value;
-                  },
-                ),
-              ),
+                  margin: const EdgeInsets.only(top: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.lock), hintText: 'Password'),
+                    obscureText: true,
+                    onSaved: (value) {
+                      passWord = value;
+                    },
+                  )),
               Container(
-                child: RaisedButton(
-                  child: Text("LOGIN"),
-                  onPressed: () {
-                    formKey.currentState.save();
-                    if (username == "" || passWord == "") {
-                      scaffoldKey.currentState.showSnackBar(SnackBar(
-                          content: Text("กรุณาระบุ user or password")));
-                    } else if (username == "admin" && passWord == "admin") {
-                      Navigator.pushNamed(context, "/home");
-                    } else {
-                      scaffoldKey.currentState.showSnackBar(SnackBar(
-                          content: Text("user or password ไม่ถูกต้อง")));
-                    }
-                  },
-                ),
-              ),
+                  margin: const EdgeInsets.only(top: 20),
+                  child: RaisedButton(
+                    child: Text('LOGIN'),
+                    onPressed: () {
+                      formKey.currentState.save();
+                      if (userName == '' || passWord == '') {
+                        scaffoldKey.currentState.showSnackBar(SnackBar(
+                            content: Text('กรุณาระบุ user or password')));
+                      } else if (userName == 'admin' && passWord == 'admin') {
+                        Navigator.pushNamed(context, '/home');
+                      } else {
+                        scaffoldKey.currentState.showSnackBar(SnackBar(
+                            content: Text('user or password ไม่ถูกต้อง')));
+                      }
+                    },
+                  )),
               Container(
                   alignment: Alignment.centerRight,
                   child: FlatButton(
                     child: Text(
-                      "Register New Account",
+                      'Register New Account',
                       style: TextStyle(color: Colors.teal),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, "/register");
+                      Navigator.pushNamed(context, '/register');
                     },
                   ))
             ])),
