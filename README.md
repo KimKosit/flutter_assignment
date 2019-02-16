@@ -1,16 +1,16 @@
 # flutter_assignment
 
 flutter_assignment
+Mobile Device Programming
 
-## Getting Started
+## About
 
-This project is a starting point for a Flutter application.
+My first Android apllication!
+This app include:
 
-A few resources to get you started if this is your first Flutter project:
+- login page (Please use - User Id : admin, Password : admin)
+- Register new account page (not fully functional)
+- Homepage (With Bottom TabBar)
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.io/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Made by KimKho©
+(Kosit Kositsrikunakorn 60070008)
